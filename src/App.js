@@ -1,17 +1,14 @@
-import React, {useEffect, useState} from "react";
-import axios from "axios";
-import MainPage from './MainPage';
-import DropDown from './DropDown';
-
+import React, { useState, useEffect } from "react";
 import "./App.css";
-
+import axios from 'axios'
+import Photo from './Photo'
 
 function App() {
 
   const [photo, setPhoto] = useState('')
   useEffect(() => {
-    axios.get('https://api.nasa.gov/planetary/apod?api_key=137pnL8isOWOtbEUEomeOxz7xNCi2rY0cTL1mhSX')
-    .then(res => {
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=wRHDqDCRNPFIgPqVgisjlD9T4AlrQqRnbo25DqUq')
+    .then(res =>{
       console.log(res.data)
       setPhoto(res.data)
     })
@@ -22,16 +19,14 @@ function App() {
 
   return (
     <div className="App">
-      <DropDown />
-      <MainPage 
-        photo={photo}
-        title={photo.title}
-        description={photo.explanation}
-        date={photo.date}
-        imageURL={photo.url}
+       <Photo 
+         photo={photo} 
+         title={photo.title} 
+         description={photo.explanation} 
+         date={photo.date} 
+         imageURL={photo.url}
       />
     </div>
   );
 }
-
 export default App;

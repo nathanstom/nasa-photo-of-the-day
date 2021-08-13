@@ -26,6 +26,7 @@ function App() {
          description={photo.explanation} 
          date={photo.date} 
          imageURL={photo.url}
+         copyright={photo.copyright}
       />
     </div>
   );

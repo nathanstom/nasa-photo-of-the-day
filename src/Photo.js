@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Photo = props => {
 
-  const { title, description, imageURL, date } = props;
+  const { title, description, imageURL, date, copyright } = props;
 
   return (
           
@@ -13,6 +13,7 @@ const Photo = props => {
                <Title> {title}</Title>
                 <Description>{description}</Description>
                 <img src={imageURL} alt="N/A" />
+                <Copyright>{copyright}</Copyright>
             </Container>
     );
 }
@@ -44,6 +45,10 @@ padding-left: 14%;
 padding-right: 14%;
 color: #E2E5E2;
 font-family: 'Space Mono', monospace;
+`
+
+const Copyright = styled.p`
+color: red;
 `
 
 export default Photo;  

@@ -1,19 +1,49 @@
 import React from "react";
-
+import styled from 'styled-components';
 
 const Photo = props => {
 
-    const { title, description, imageURL, date } = props;
+  const { title, description, imageURL, date } = props;
 
-
-    return (
-        <div>
-                <h1>Astronomy Picture of the Day</h1>
-                <p>{date}</p>
-                <h2>{title}</h2>
-                <p>{description}</p>
+  return (
+          
+            <Container>
+               <Header>NASA's Astronomy Picture of The Day</Header>
+                <Date>{date}</Date>
+               <Title> {title}</Title>
+                <Description>{description}</Description>
                 <img src={imageURL} alt="N/A" />
-        </div>
+            </Container>
     );
 }
+
+
+const Container = styled.div`
+border-radius: 10px;
+background-color: #003566;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin: 10px;
+border: solid 10px #000814;`
+
+const Title = styled.h2`
+color: #ffc300;
+font-family: 'Space Mono', monospace;
+`
+const Header = styled.h1`
+padding: 2%;
+color: #ffc300;
+font-family: 'Space Mono', monospace;
+`
+const Date = styled.p`
+color: #ffd60a;
+`
+const Description = styled.p`
+padding-left: 14%;
+padding-right: 14%;
+color: #E2E5E2;
+font-family: 'Space Mono', monospace;
+`
+
 export default Photo;  

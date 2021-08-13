@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+
 import axios from 'axios'
 import Photo from './Photo'
 
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-       <Photo 
+    <Photo 
          photo={photo} 
          title={photo.title} 
          description={photo.explanation} 
@@ -29,4 +30,4 @@ function App() {
     </div>
   );
 }
-export default App;
+export default App; 
